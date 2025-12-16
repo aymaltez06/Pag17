@@ -1,0 +1,570 @@
+/*
+=====================================
+1. Estilos Globales
+=====================================
+*/
+body {
+    background-color: #1a1a2e;
+    color: #e4e6eb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+=====================================
+2. Header
+=====================================
+*/
+.main-header {
+    background-color: #16213e;
+    padding: 10px 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.icon {
+    font-size: 2.2em;
+    color: #ff4971;
+    cursor: pointer;
+}
+
+/*
+=====================================
+3. Main
+=====================================
+*/
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/*
+=====================================
+4. Choice One (CORRECTO)
+=====================================
+*/
+/* ===== Choice One ===== */
+
+.section-choices {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+/* Título centrado */
+.section-choices h2 {
+    margin-bottom: 25px;
+}
+
+/* CONTENEDOR HORIZONTAL REAL */
+.cards-container {
+    display: flex;
+    flex-direction: row;      /* ← HORIZONTAL */
+    justify-content: center;  /* ← CENTRADO */
+    align-items: flex-start;
+    justify-content: space-between; /* ← CLAVE */
+    padding: 0 50px;
+    margin-top: -20px;
+    width: 100%;              /* ← CLAVE */
+}
+.card:first-child {
+    margin-left: 15px;
+}
+
+.card:last-child {
+    margin-right: 100px;
+}
+
+/*
+5. Cards
+=====================================
+*/
+.card {
+    max-width: 300px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    height: 325px;
+}
+
+.image {
+    height: 200px;
+    background-color: rgb(58, 10, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 50%;
+    display: block;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.title {
+    color: #111827;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.action {
+    display: inline-flex;
+    margin-top: 1rem;
+    background-color: #2563EB;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    gap: 6px;
+}
+
+.action span {
+    transition: 0.3s ease;
+}
+
+.action:hover span {
+    transform: translateX(4px);
+}
+
+/*
+----------------------------------
+/*corazon animado*/
+/* ------------------------------------------*/ 
+.heart {
+  display: inline-grid;
+  grid-template-columns: repeat(13, 20px);
+  grid-template-rows: repeat(11, 20px);
+  gap: 1px;
+  padding: 20px;
+  animation: heartbeat 2s infinite ease-in-out;
+}
+.pixel {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+.pixel.pink {
+  background: #e63946;
+  animation: pinkPulse 2.5s infinite ease-in-out;
+}
+.pixel.soft-pink {
+  background: #f1a1b4;
+  animation: softPinkPulse 2.2s infinite ease-in-out;
+}
+.pixel.white {
+  background: #ffeaea;
+  animation: whitePulse 2.8s infinite ease-in-out;
+}
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+@keyframes pinkPulse {
+  0%,
+  100% {
+    background: #ff6b81;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+  }
+  50% {
+    background: #e63946;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  }
+}
+@keyframes softPinkPulse {
+  0%,
+  100% {
+    background: #e63946;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(241, 161, 180, 0);
+  }
+  50% {
+    background: #f1a1b4;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(241, 161, 180, 0.6);
+  }
+}
+@keyframes whitePulse {
+  0%,
+  100% {
+    background: #ffe3e3;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 234, 234, 0);
+  }
+  50% {
+    background: #ffeaea;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 234, 234, 0.8);
+  }
+}
+/* ------------------------------------------*/
+/*  RATING HEARTS  */
+
+/* From Uiverse.io by hokageDSL */ 
+.rating > label {
+  margin-right: 4px;
+}
+
+.rating:not(:checked) > input {
+  display: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.rating:not(:checked) > label > svg {
+  fill: #666;
+  transition:
+    fill 0.3s ease,
+    transform 0.3s ease;
+}
+
+.rating > input:checked ~ label > svg {
+  fill: #ff0000;
+  transform: scale(1.1);
+}
+
+.rating:not(:checked) > label:hover ~ label > svg,
+.rating:not(:checked) > label:hover > svg {
+  fill: #ff1a1a;
+  transform: scale(1.05);
+}
+
+#heart1:checked ~ label > svg {
+  fill: #ff0000;
+}
+
+#heart2:checked ~ label > svg {
+  fill: #ff4d00;
+}
+
+#heart3:checked ~ label > svg {
+  fill: #ff9900;
+}
+
+#heart4:checked ~ label > svg {
+  fill: #ccff00;
+}
+
+#heart5:checked ~ label > svg {
+  fill: #66ff00;
+}
+
+#heart6:checked ~ label > svg {
+  fill: #00ff4d;
+}
+
+#heart7:checked ~ label > svg {
+  fill: #00ff99;
+}
+
+#heart8:checked ~ label > svg {
+  fill: #00ccff;
+}
+
+#heart9:checked ~ label > svg {
+  fill: #0059ff;
+}
+
+#heart10:checked ~ label > svg {
+  fill: #9900ff;
+}
+
+#heart1:hover ~ label > svg,
+#heart1:hover > svg {
+  fill: #e60000 !important;
+}
+
+#heart2:hover ~ label > svg,
+#heart2:hover > svg {
+  fill: #e66a00 !important;
+}
+
+#heart3:hover ~ label > svg,
+#heart3:hover > svg {
+  fill: #e6b600 !important;
+}
+
+#heart4:hover ~ label > svg,
+#heart4:hover > svg {
+  fill: #a6e600 !important;
+}
+
+#heart5:hover ~ label > svg,
+#heart5:hover > svg {
+  fill: #00e600 !important;
+}
+
+#heart6:hover ~ label > svg,
+#heart6:hover > svg {
+  fill: #00b3e6 !important;
+}
+
+#heart7:hover ~ label > svg,
+#heart7:hover > svg {
+  fill: #00e6b3 !important;
+}
+
+#heart8:hover ~ label > svg,
+#heart8:hover > svg {
+  fill: #00e6e6 !important;
+}
+
+#heart9:hover ~ label > svg,
+#heart9:hover > svg {
+  fill: #0066e6 !important;
+}
+
+#heart10:hover ~ label > svg,
+#heart10:hover > svg {
+  fill: #6600e6 !important;
+}
+
+
+/* ===============================
+   CONTADOR PRÓXIMO MES
+================================ */
+
+.month-counter {
+  margin: 85px 0 80px;
+  text-align: center;
+}
+
+.month-counter span {
+  font-size: 1.2rem;
+  color: #ff6b81;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 20px;
+  background: rgba(255, 107, 129, 0.08);
+  box-shadow: 0 0 20px rgba(255, 107, 129, 0.25);
+  display: inline-block;
+}
+
+
+/* ===============================
+   SECCIÓN LOVE / 7 MESES
+================================ */
+
+.section-love {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  gap: 18px;
+}
+
+/* TEXTO SUPERIOR */
+.love-text h2 {
+  font-size: 2.2rem;
+  color: #ff6b81;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.love-text p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #e4e6eb;
+  opacity: 0.9;
+}
+
+/* FOTO CIRCULAR GRANDE */
+.love-photo {
+  margin: 50px auto 30px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff6b81, #6c63ff);
+  padding: 6px;
+  box-shadow: 0 0 40px rgba(255, 107, 129, 0.4);
+}
+
+.love-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* PREGUNTA AMOROSA */
+.love-question {
+  color: #ff6b81;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 107, 129, 0.4);
+}
+
+
+/* RATING CENTRADO */
+.rating-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 50px;
+}
+
+/* MINI CARDS INFERIORES */
+.mini-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.mini-card {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 107, 129, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .love-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .mini-cards {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ===============================
+   Recuerdos Section
+================================ */
+.memories-title {
+  text-align: center;
+  color: #ff6b81;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px rgba(255, 107, 129, 0.4);
+}
+
+.memories-section {
+  width: 100%;
+  max-width: 1400px;   /* ← clave para ocupar más pantalla */
+  margin: 140px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Card */
+.memory-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.15);
+}
+
+/* Contenedor de imagen */
+.memory-image {
+  width: 320px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.25);
+}
+
+.memory-row {
+  display: grid;
+  grid-template-columns: 420px 1fr; /* ← imagen grande + texto flexible */
+  gap: 60px;
+  align-items: center;
+}
+
+.memory-image {
+  width: 100%;
+  height: 280px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.25);
+}
+
+.memory-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.memory-text {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 32px 36px;
+  border-radius: 26px;
+  backdrop-filter: blur(6px);
+}
+
+.memory-text h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.memory-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+@media (max-width: 900px) {
+  .memory-row {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-image {
+    height: 240px;
+  }
+}
