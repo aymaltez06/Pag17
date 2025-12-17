@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestra Galería</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/galeria.css">
+</head>
+
+<body>
+<header class="main-header">
+  <div class="nav-controls">
+    <span class="icon">❤️</span>
+    <span class="icon">💖</span>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="musica.html">Música</a>
+      </li>
+      <li class="nav-item">
+        <a href="galeria.html">Galería</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <!-- MENSAJE EMOTIVO -->
+  <section class="intro">
+    <p>
+      Cada foto guarda un instante que no volverá,
+      pero que siempre vivirá en nosotros ✨
+    </p>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="gallery-container">
+
+    <!-- FOTOS GRANDES -->
+    <div class="big-photos">
+      <div class="photo-card"><img id="big1" src="img/1.jpg" alt=""></div>
+      <div class="photo-card"><img id="big2" src="img/2.jpg" alt=""></div>
+      <div class="photo-card"><img id="big3" src="img/3.jpg" alt=""></div>
+      <div class="photo-card"><img id="big4" src="img/4.jpg" alt=""></div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="carousel" id="carousel">
+      <img src="img/1.jpg" onclick="setImages(0)">
+      <img src="img/2.jpg" onclick="setImages(1)">
+      <img src="img/3.jpg" onclick="setImages(2)">
+      <img src="img/4.jpg" onclick="setImages(3)">
+      <img src="img/5.jpg" onclick="setImages(4)">
+      <img src="img/6.jpg" onclick="setImages(5)">
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-card">
+      <p>🎥 Un recuerdo que siempre nos acompaña</p>
+      <iframe
+        src="https://www.youtube.com/embed/Ggg4RQK4inY"
+        title="Video recuerdo"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </section>
+
+  <!-- JS -->
+  <script src="galeria.js"></script>
+</body>
+</html>

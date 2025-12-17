@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Música 🎶</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/css/musica.css">
+</head>
+
+<body>
+<div id="stars-bg"></div>
+
+<header class="main-header">
+  <div class="nav-controls">
+    <span class="icon">❤️</span>
+    <span class="icon">💖</span>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="musica.html">Música</a>
+      </li>
+      <li class="nav-item">
+        <a href="galeria.html">Galería</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <main class="music-page">
+
+    <!-- TEXTO EMOTIVO -->
+    <section class="music-intro">
+      <p>
+        Hay canciones que no solo se escuchan,  
+        se sienten.  
+        Cada una de estas guarda un pedacito de nosotros,
+        de momentos, risas, silencios y abrazos.
+      </p>
+    </section>
+
+    <!-- LISTA DE CANCIONES -->
+    <section class="songs-list">
+
+      <div class="song-item">
+        <span class="song-name">Nuestra canción</span>
+        <a href="https://open.spotify.com/" target="_blank" class="play-btn">▶</a>
+      </div>
+
+      <div class="song-item">
+        <span class="song-name">La que siempre me recuerda a ti</span>
+        <a href="https://open.spotify.com/" target="_blank" class="play-btn">▶</a>
+      </div>
+
+      <div class="song-item">
+        <span class="song-name">La que sonó ese día</span>
+        <a href="https://open.spotify.com/" target="_blank" class="play-btn">▶</a>
+      </div>
+
+      <div class="song-item">
+        <span class="song-name">Nuestra favorita</span>
+        <a href="https://open.spotify.com/" target="_blank" class="play-btn">▶</a>
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN FINAL -->
+    <section class="music-bottom">
+
+      <div class="music-photo">
+        <img src="../img/foto-musica.jpg" alt="Nuestro momento musical">
+      </div>
+
+      <div class="music-text">
+        <p>
+          La música nos acompañó sin darse cuenta.
+          En el fondo de muchos momentos importantes,
+          siempre hubo una canción que ahora
+          ya no suena igual sin ti.
+        </p>
+      </div>
+
+    </section>
+
+<section class="music-video">
+  <iframe
+    src="https://www.youtube.com/embed/Ggg4RQK4inY"
+    title="WOS - ALMA DINAMITA (Lyric Video)"
+    frameborder="0"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+  </main>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("stars-bg", {
+  particles: {
+    number: {
+      value: 80,
+      density: { enable: true, value_area: 800 }
+    },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    opacity: {
+      value: 0.4,
+      random: true
+    },
+    size: {
+      value: 2,
+      random: true
+    },
+    move: {
+      enable: true,
+      speed: 0.3,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: false },
+      onclick: { enable: false }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
+</html>

@@ -21,7 +21,7 @@ function calcularDias() {
 
   // 🧠 Lógica del mensaje
   if (dias === 0) {
-    counterText.textContent = "Es hoy nuestro mes ❤️";
+    counterText.textContent = "Es hoy nuestro mes 7 ❤️";
   } else if (dias === 1) {
     counterText.textContent = "Falta 1 día para nuestro próximo mes 💕";
   } else {
@@ -30,3 +30,4 @@ function calcularDias() {
 }
 
 calcularDias();
+
