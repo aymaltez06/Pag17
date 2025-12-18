@@ -264,3 +264,33 @@ button:hover {
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
+
+
+/* ===============================
+   CARD RETRO - VAMOS A JUGAR
+================================ */
+.retro-intro {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px 30px;
+}
+
+.retro-card {
+  background: linear-gradient(180deg, #2b145e, #161b3a);
+  border: 3px solid #ff6b81;
+  border-radius: 12px;
+  padding: 18px 50px;
+  box-shadow:
+    0 0 0 4px rgba(255,107,129,0.25),
+    0 12px 30px rgba(0,0,0,0.6);
+}
+
+.retro-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 13px;
+  color: #ff9db0;
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 8px rgba(255,107,129,0.8);
+  letter-spacing: 1px;
+}
