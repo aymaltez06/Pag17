@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atrapa los corazones</title>
+
+  <link rel="stylesheet" href="/css/juegos.css" />
+</head>
+
+
+<audio id="soundGood" src="/src/pop-402324.mp3"></audio>
+<audio id="soundBad" src="/src/error-011-352286.mp3"></audio>
+
+<button class="sound-toggle" id="soundToggle">🔈</button>
+
+
+
+<body>
+
+
+<header class="main-header">
+  <div class="nav-controls">
+    <span class="icon">❤️</span>
+    <span class="icon">💖</span>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="musica.html">Música</a>
+      </li>
+      <li class="nav-item">
+        <a href="galeria.html">Galería</a>
+      </li>
+      <li class="nav-item">
+        <a href="juegos.html">Jugemos</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+<section class="game-section">
+
+  <h2 class="game-title">Atrapa los corazones 💘</h2>
+
+  <div class="game-console">
+    <!-- ESTE ID ES EL CORRECTO -->
+    <div id="gameArea"></div>
+
+    <span id="time" class="game-time">60s</span>
+  </div>
+
+  <div class="difficulty-controls">
+    <button data-difficulty="easy">Fácil</button>
+    <button data-difficulty="medium">Medio</button>
+    <button data-difficulty="hard">Difícil</button>
+  </div>
+
+  <div class="game-controls">
+    <button id="startGame">Iniciar</button>
+    <button id="pauseGame">Pausar</button>
+  </div>
+
+  <div class="game-result" id="gameMessage"></div>
+
+</section>
+
+<script src="/js/juegos.js"></script>
+</body>
+</html>
