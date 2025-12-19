@@ -4,79 +4,166 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atrapa los corazones</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/juegos.css" />
 </head>
 
-
-<audio id="soundGood" src="/src/pop-402324.mp3"></audio>
-<audio id="soundBad" src="/src/error-011-352286.mp3"></audio>
-
-<button class="sound-toggle" id="soundToggle">🔈</button>
-
-
-
 <body>
 
+  <!-- ===============================
+       SONIDOS
+  ================================ -->
+  <audio id="soundGood" src="/src/pop-402324.mp3"></audio>
+  <audio id="soundBad" src="/src/error-011-352286.mp3"></audio>
 
-<header class="main-header">
-  <div class="nav-controls">
-    <span class="icon">❤️</span>
-    <span class="icon">💖</span>
+  <button class="sound-toggle" id="soundToggle">🔈</button>
+
+  <!-- ===============================
+       HEADER
+  ================================ -->
+  <header class="main-header">
+    <div class="nav-controls">
+      <span class="icon">❤️</span>
+      <span class="icon">💖</span>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">Inicio</a></li>
+        <li class="nav-item"><a href="musica.html">Música</a></li>
+        <li class="nav-item"><a href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a href="juegos.html">Jugemos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===============================
+       INTRO RETRO
+  ================================ -->
+  <div class="retro-intro">
+    <div class="retro-card">
+      <span class="retro-text">▶ VAMOS A JUGAR ◀</span>
+    </div>
   </div>
 
-  <nav>
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="index.html">Inicio</a>
+
+<!-- ===============================
+     SECCIÓN BIENVENIDA
+=============================== -->
+<section class="welcome-section">
+
+  <h2 class="welcome-title">🎮 Arcade</h2>
+
+  <div class="welcome-layout">
+
+    <!-- LISTA DE JUEGOS -->
+    <div class="welcome-card games-list">
+      <h3>🕹️ Juegos</h3>
+
+          <ul class="games-menu">
+      <li class="game-item active" data-game="corazones">
+        ❤️ Atrapa los corazones
       </li>
-      <li class="nav-item">
-        <a href="musica.html">Música</a>
-      </li>
-      <li class="nav-item">
-        <a href="galeria.html">Galería</a>
-      </li>
-      <li class="nav-item">
-        <a href="juegos.html">Jugemos</a>
+
+      <li class="game-item disabled" data-game="proximamente">
+        🔒 Próximamente
       </li>
     </ul>
-  </nav>
-</header>
+    </div>
 
-<div class="retro-intro">
-  <div class="retro-card">
-    <span class="retro-text">▶ VAMOS A JUGAR ◀</span>
+    <!-- DASHBOARD -->
+    <div class="welcome-card dashboard">
+      <h3>📊 Estadísticas</h3>
+
+      <div class="stat">
+        <span>🏆 Récord global</span>
+        <strong id="statRecord">—</strong>
+      </div>
+
+      <div class="stat">
+        <span>👤 Mejor jugador</span>
+        <strong id="statBestPlayer">—</strong>
+      </div>
+
+      <div class="stat">
+        <span>🎮 Juegos disponibles</span>
+        <strong id="statGames">—</strong>
+      </div>
+    </div>
   </div>
+</section>
+
+
+  <!-- ===============================
+       SECCIÓN JUEGO
+  ================================ -->
+
+
+    
+ 
+    <h2 class="game-title">Atrapa los corazones 💘</h2>
+
+    <!-- ===== LAYOUT PRINCIPAL ===== -->
+    <div class="game-layout">
+
+      <!-- JUGADORES (IZQUIERDA) -->
+      <div class="side-panel left-panel">
+        <div class="card players-card">
+          <h3>👥 Jugadores</h3>
+
+          <div class="player-input">
+            <input type="text" id="playerNameInput" placeholder="Nombre jugador" />
+            <button id="addPlayerBtn">➕</button>
+          </div>
+
+          <ul id="playersList"></ul>
+        </div>
+      </div>
+
+      <!-- CONSOLA (CENTRO) -->
+      <div class="game-console">
+        <div id="gameArea"></div>
+        <span id="time" class="game-time">60s</span>
+      </div>
+
+      <!-- RANKING (DERECHA) -->
+      <div class="side-panel right-panel">
+        <div class="card ranking-card">
+          <h3>🏆 Ranking</h3>
+          <ul id="rankingList"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="difficulty-controls">
+      <button data-difficulty="easy">Fácil</button>
+      <button data-difficulty="medium">Medio</button>
+      <button data-difficulty="hard">Difícil</button>
+    </div>
+
+    <div class="game-controls">
+      <button id="startGame">Iniciar</button>
+      <button id="pauseGame">Pausar</button>
+    </div>
+
+    <div class="game-result" id="gameMessage"></div>
+
+    <div class="game-record">
+      🏆 Récord: <span id="bestScore">0</span>
+    </div>
 </div>
 
 
+  </section>
 
-<section class="game-section">
+  <!-- ===============================
+       SCRIPT
+  ================================ -->
+  <script src="/js/juegos.js"></script>
 
-  <h2 class="game-title">Atrapa los corazones 💘</h2>
-
-  <div class="game-console">
-    <!-- ESTE ID ES EL CORRECTO -->
-    <div id="gameArea"></div>
-
-    <span id="time" class="game-time">60s</span>
-  </div>
-
-  <div class="difficulty-controls">
-    <button data-difficulty="easy">Fácil</button>
-    <button data-difficulty="medium">Medio</button>
-    <button data-difficulty="hard">Difícil</button>
-  </div>
-
-  <div class="game-controls">
-    <button id="startGame">Iniciar</button>
-    <button id="pauseGame">Pausar</button>
-  </div>
-
-  <div class="game-result" id="gameMessage"></div>
-
-</section>
-
-<script src="/js/juegos.js"></script>
 </body>
 </html>
