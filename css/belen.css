@@ -8,8 +8,10 @@
 body {
   background-color: #0f1023;
   background-image: url("../J1");
-  background-repeat: repeat; /* o no-repeat si es grande */
-  background-size: 300px;     /* ajusta según la imagen */
+  background-repeat: repeat;
+  /* o no-repeat si es grande */
+  background-size: 300px;
+  /* ajusta según la imagen */
   background-position: center;
   color: #eaeaf0;
 
@@ -40,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 /* IZQUIERDA */
@@ -60,7 +62,8 @@ body {
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 18px; /* separación justa */
+  gap: 18px;
+  /* separación justa */
   margin: 0;
   padding: 0;
 }
@@ -108,6 +111,68 @@ body {
   gap: 2rem;
   margin-top: 2.5rem;
 }
+
+
+/*
+=====================================
+SECCIÓN DE FOTOS (PHOTO CARDS)
+=====================================
+*/
+
+/* Contenedor flexible */
+.photo-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px auto;
+  flex-wrap: wrap; /* Para que se adapte si hay poco espacio */
+}
+
+/* Tarjeta individual */
+.photo-card {
+  width: 320px;
+  height: 420px;
+  position: relative;
+  
+  /* Fondo Glassmorphism */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  
+  /* BORDE Y BRILLO PERMANENTE (Efecto aplicado siempre) */
+  border: 2px solid rgba(255, 107, 138, 0.8); /* Borde rosa visible */
+  box-shadow: 0 0 25px rgba(255, 107, 138, 0.4); /* Resplandor rosa constante */
+  
+  border-radius: 20px;
+  padding: 12px;
+  
+  /* Transición suave solo para el movimiento */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover (Solo movimiento e intensificar un poco el brillo) */
+.photo-card:hover {
+  transform: translateY(-8px); /* Se levanta un poco */
+  box-shadow: 0 15px 35px rgba(255, 107, 138, 0.6); /* Brilla un poco más fuerte */
+}
+
+/* Imagen interna */
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* IMPORTANTE: La foto llena el marco sin deformarse */
+  border-radius: 14px;  /* Redondeado interno */
+  display: block;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+  .photo-card {
+    width: 280px;       /* Un poco más pequeñas en celular */
+    height: 360px;
+  }
+}
+
 
 /* Cards */
 .card {
@@ -170,6 +235,7 @@ body {
     flex-direction: column;
   }
 }
+
 /* Tarjetas de fotos horizontales */
 .photo-cards {
   display: flex;
@@ -186,7 +252,8 @@ body {
   overflow: hidden;
   box-shadow: 0 0 30px rgba(255, 107, 138, 0.18);
   backdrop-filter: blur(6px);
-  height: 180px; /* 👈 tamaño controlado */
+  height: 180px;
+  /* 👈 tamaño controlado */
   transition: transform 0.3s ease;
 }
 
@@ -231,7 +298,8 @@ body {
 
 .giraffe-float {
   position: fixed;
-  top: 260px;        /* ⬅️ aquí controlas la altura general */
+  top: 260px;
+  /* ⬅️ aquí controlas la altura general */
   left: 30px;
   z-index: 9999;
 }
@@ -250,7 +318,8 @@ body {
 
 /* PANEL (debajo del botón automáticamente) */
 .giraffe-panel {
-  margin-top: 12px;   /* ⬅️ separación exacta botón → panel */
+  margin-top: 12px;
+  /* ⬅️ separación exacta botón → panel */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,7 +333,8 @@ body {
 
 /* imagen */
 .giraffe-image {
-  width: 200px;       /* ⬅️ imagen MÁS GRANDE */
+  width: 200px;
+  /* ⬅️ imagen MÁS GRANDE */
   background: #6b4f2a;
   border-radius: 16px;
   padding: 12px;
