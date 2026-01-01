@@ -1,19 +1,32 @@
 /*
 =====================================
-2. Header
+1. Header & Globales
 =====================================
 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(
+      rgba(26, 26, 46, 0.85),
+      rgba(26, 26, 46, 0.85)
+    ),
+    url("/src/j1.jpg"); /* Asegúrate que la ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e4e6eb;
+}
+
 .main-header {
   background-color: #16213e;
   height: 75px;
   padding: 0 25px;
   border-radius: 0 0 15px 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 /* IZQUIERDA */
@@ -33,7 +46,7 @@
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 18px; /* separación justa */
+  gap: 18px;
   margin: 0;
   padding: 0;
 }
@@ -51,27 +64,128 @@
   text-shadow: 0 0 6px rgba(255, 143, 216, 0.8);
 }
 
-
-/* ===============================
-   MINI JUEGO – ESTILO FINAL
-================================ */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background:
-    linear-gradient(
-      rgba(26, 26, 46, 0.85),
-      rgba(26, 26, 46, 0.85)
-    ),
-    url("/src/j1.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  color: #e4e6eb;
+/*
+=====================================
+2. Intro & Bienvenida
+=====================================
+*/
+.retro-intro {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px 30px;
 }
 
+.retro-card {
+  background: linear-gradient(180deg, #2b145e, #161b3a);
+  border: 3px solid #ff6b81;
+  border-radius: 12px;
+  padding: 18px 50px;
+  box-shadow:
+    0 0 0 4px rgba(255,107,129,0.25),
+    0 12px 30px rgba(0,0,0,0.6);
+}
+
+.retro-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 13px;
+  color: #ff9db0;
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 8px rgba(255,107,129,0.8);
+  letter-spacing: 1px;
+}
+
+.welcome-section {
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.welcome-title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ff6ec7;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 110, 199, 0.6);
+}
+
+.welcome-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+/* Cards de bienvenida */
+.welcome-card {
+  background: linear-gradient(145deg, #1b1f3b, #0e1020);
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid #ff6ec7;
+  box-shadow: 0 0 25px rgba(255, 110, 199, 0.25);
+}
+
+.welcome-card h3 {
+  margin-bottom: 16px;
+  color: #ffb3e6;
+}
+
+/* Lista de juegos */
+.games-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.game-item {
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #15182f;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.game-item:hover {
+  border-color: #ff6ec7;
+  box-shadow: 0 0 10px rgba(255, 110, 199, 0.4);
+}
+
+.game-item.active {
+  background: linear-gradient(135deg, #ff6ec7, #b14cff);
+  color: #fff;
+}
+
+.game-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Dashboard Estadísticas */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #15182f;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.stat strong {
+  color: #ff6ec7;
+}
+
+/*
+=====================================
+3. Sección de Juego Principal
+=====================================
+*/
 .game-section {
   text-align: center;
   padding: 60px 20px;
@@ -83,37 +197,54 @@ body {
   text-shadow: 0 0 10px rgba(255,107,129,0.4);
   text-align: center;
   width: 100%;
+  font-size: 2rem;
 }
 
-.game-result {
+/* LAYOUT JUEGO + PANELES */
+.game-layout {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
-.game-record {
-  display: flex;
-  justify-content: center;
+/* Paneles laterales */
+.side-panel {
+  width: 260px;
+  flex-shrink: 0;
 }
 
-
-.game-result,
-.game-record {
-  width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+/* Cards Generales del juego */
+.card {
+  background: linear-gradient(180deg, #1b1f3b, #11142a);
+  border: 2px solid #ff6b81;
+  border-radius: 16px;
+  padding: 16px 12px;
+  box-shadow:
+    0 0 0 3px rgba(255,107,129,0.25),
+    0 10px 25px rgba(0,0,0,0.6);
+  text-align: left;
 }
 
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #ff9db0;
+  text-shadow: 0 0 6px rgba(255, 157, 176, 0.6);
+}
 
-/* ===============================
-   CONSOLA DEL JUEGO
-================================ */
+/*
+=====================================
+4. Consola del Juego
+=====================================
+*/
 .game-console {
   width: 90%;
   max-width: 800px;
-  height: 360px;
-  margin: 0 auto 30px;
+  height: 420px; /* Altura fija en escritorio */
+  margin: 0 auto;
   background: linear-gradient(135deg, #161b3a, #2b145e);
   border-radius: 22px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -121,18 +252,8 @@ body {
   overflow: hidden;
   flex-shrink: 0;
   animation: consolePulse 4s ease-in-out infinite;
-   border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.12);
 }
-
-
-.game-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-}
-
 
 .game-console::after {
   content: "";
@@ -146,7 +267,6 @@ body {
     );
   pointer-events: none;
 }
-
 
 @keyframes consolePulse {
   0% {
@@ -166,6 +286,26 @@ body {
   }
 }
 
+.game-console.glow {
+  box-shadow: 0 0 25px rgba(255,107,129,0.8);
+}
+
+.game-console.shake {
+  animation: shake 0.25s;
+}
+
+.game-console.frenetic {
+  animation: shake 0.15s infinite;
+  box-shadow: 0 0 30px #ff4d6d, 0 0 50px #a855f7;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
 
 #gameArea {
   position: relative;
@@ -173,7 +313,7 @@ body {
   height: 100%;
 }
 
-/* CONTADOR */
+/* Tiempo */
 .game-time {
   position: absolute;
   bottom: 12px;
@@ -183,9 +323,7 @@ body {
   color: #ffb6c1;
 }
 
-/* ===============================
-   CORAZONES
-================================ */
+/* Elementos del juego (Corazones) */
 .heart-drop {
   position: absolute;
   font-size: 24px;
@@ -199,9 +337,20 @@ body {
   to { transform: translateY(420px); }
 }
 
-/* ===============================
-   BOTONES GENERALES
-================================ */
+/*
+=====================================
+5. Controles y Botones
+=====================================
+*/
+.game-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
 button {
   border: none;
   padding: 10px 18px;
@@ -220,23 +369,20 @@ button:hover {
   box-shadow: 0 10px 22px rgba(255,107,129,0.55);
 }
 
-/* ===============================
-   DIFICULTAD – ESTILO CLARO
-================================ */
+/* Dificultad */
 .difficulty-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
   width: 100%;
+  margin-top: 20px;
 }
-
 
 .difficulty-controls button {
   background: linear-gradient(135deg, #ff7ac8, #b56bff);
 }
 
-/* ACTIVO (SE NOTA BIEN) */
 .difficulty-controls button.active {
   background: linear-gradient(135deg, #ff3d9a, #6d28d9);
   box-shadow:
@@ -245,22 +391,49 @@ button:hover {
   transform: translateY(2px) scale(0.97);
 }
 
-/* ===============================
-   RESULTADO FINAL
-================================ */
+/* Botón de Sonido */
+.sound-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff6b81, #a855f7);
+  color: white;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+/*
+=====================================
+6. Resultados y Feedback
+=====================================
+*/
 .game-result {
   margin-top: 20px;
   color: #ff9db0;
   font-size: 1.1rem;
   text-shadow: 0 0 6px rgba(255, 157, 176, 0.4);
+  text-align: center;
 }
 
+.game-record {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffd6e8;
+  opacity: 0.9;
+  text-align: center;
+}
 
-/* ===============================
-   FEEDBACK VISUAL
-================================ */
+.game-record span {
+  font-weight: bold;
+  color: #ff9db0;
+}
 
-/* Texto flotante +1 / +5 */
+/* Texto flotante +1 / -1 */
 .floating-score {
   position: absolute;
   font-size: 14px;
@@ -306,73 +479,7 @@ button:hover {
   }
 }
 
-/* Glow de consola */
-.game-console.glow {
-  box-shadow: 0 0 25px rgba(255,107,129,0.8);
-}
-
-/* Vibración por error */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
-}
-
-.game-console.shake {
-  animation: shake 0.25s;
-}
-
-/* Botón sonido */
-.sound-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #ff6b81, #a855f7);
-  color: white;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
-
-
-/* ===============================
-   CARD RETRO - VAMOS A JUGAR
-================================ */
-.retro-intro {
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px 30px;
-}
-
-.retro-card {
-  background: linear-gradient(180deg, #2b145e, #161b3a);
-  border: 3px solid #ff6b81;
-  border-radius: 12px;
-  padding: 18px 50px;
-  box-shadow:
-    0 0 0 4px rgba(255,107,129,0.25),
-    0 12px 30px rgba(0,0,0,0.6);
-}
-
-.retro-text {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 13px;
-  color: #ff9db0;
-  text-shadow:
-    2px 2px 0 #000,
-    0 0 8px rgba(255,107,129,0.8);
-  letter-spacing: 1px;
-}
-
-
-/* ===============================
-   MENSAJE BONO DE TIEMPO
-================================ */
+/* Mensaje Bono de Tiempo */
 .time-bonus {
   position: absolute;
   top: 45%;
@@ -403,69 +510,11 @@ button:hover {
   }
 }
 
-
-.game-console.frenetic {
-  animation: shake 0.15s infinite;
-  box-shadow: 0 0 30px #ff4d6d, 0 0 50px #a855f7;
-}
-
-
-.game-record {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ffd6e8;
-  opacity: 0.9;
-}
-
-.game-record span {
-  font-weight: bold;
-  color: #ff9db0;
-}
-
-
-/* ===============================
-   LAYOUT JUEGO + PANELES
-================================ */
-.game-layout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 28px;
-  margin-top: 40px;
-}
-
-
-/* Paneles laterales */
-.side-panel {
-  width: 260px;
-  flex-shrink: 0;
-}
-
-
-/* ===============================
-   CARDS GENERALES
-================================ */
-.card {
-  background: linear-gradient(180deg, #1b1f3b, #11142a);
-  border: 2px solid #ff6b81;
-  border-radius: 16px;
-  padding: 16px 12px;
-  box-shadow:
-    0 0 0 3px rgba(255,107,129,0.25),
-    0 10px 25px rgba(0,0,0,0.6);
-  text-align: left;
-}
-
-.card h3 {
-  margin: 0 0 12px;
-  font-size: 14px;
-  color: #ff9db0;
-  text-shadow: 0 0 6px rgba(255, 157, 176, 0.6);
-}
-
-/* ===============================
-   JUGADORES
-================================ */
+/*
+=====================================
+7. Estilos de Listas (Jugadores/Ranking)
+=====================================
+*/
 .players-card {
   margin-bottom: 20px;
 }
@@ -513,16 +562,13 @@ button:hover {
   background: rgba(255, 107, 129, 0.2);
 }
 
-/* jugador activo */
 #playersList li.active {
   background: linear-gradient(135deg, #ff6b81, #a855f7);
   color: white;
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* ===============================
-   RANKING
-================================ */
+/* Ranking */
 .ranking-card ul {
   list-style: none;
   padding: 0;
@@ -546,9 +592,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* ===============================
-   SCROLL BAR RETRO
-================================ */
+/* Scrollbars Retro */
 #playersList::-webkit-scrollbar,
 .ranking-card ul::-webkit-scrollbar {
   width: 6px;
@@ -560,139 +604,136 @@ button:hover {
   border-radius: 6px;
 }
 
-@media (max-width: 768px) {
 
-  .game-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+/* =========================================
+   CORRECCIONES RESPONSIVE (MÓVIL Y TABLET)
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+  /* 1. HEADER ALINEADO */
+  /* Ajustamos el padding del header para que coincida con el resto del cuerpo */
+  .main-header {
+    padding: 0 20px; /* Igual que el contenido */
   }
 
-  .side-panel {
-    display: none;
+  /* 2. CONTENEDORES CON "AIRE" (CLAVE PARA LA ALINEACIÓN) */
+  /* Esto evita que las cards toquen los bordes de la pantalla */
+  .welcome-section,
+  .game-section,
+  .retro-intro {
+    padding-left: 24px;  /* Margen izquierdo seguro */
+    padding-right: 24px; /* Margen derecho seguro */
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    width: 100%;
+  }
+
+  /* 3. SECCIÓN DE BIENVENIDA */
+  .welcome-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Aseguramos que las cards no se desborden */
+  .welcome-card, .retro-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 4. REORDENAMIENTO DEL JUEGO (Mantiene tu lógica anterior) */
+  .game-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px; /* Un poco más de espacio vertical */
+  }
+
+  .game-layout {
+    display: contents;
+  }
+
+  /* --- ORDEN Y TAMAÑO --- */
+  
+  /* Consola */
+  .game-console {
+    order: 1;
+    width: 100%;
+    height: 50vh; /* Altura equilibrada */
+    max-height: 400px;
+    border-radius: 16px; /* Bordes un poco más suaves en móvil */
+  }
+
+  /* Panel Jugadores */
+  .side-panel.left-panel {
+    order: 2;
+    display: block !important;
+    width: 100%;
+    max-width: none; /* Quitamos restricción para que llene el espacio disponible */
+  }
+
+  /* Botones (En medio) */
+  .difficulty-controls {
+    order: 3;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .game-controls {
+    order: 4;
+    margin-bottom: 15px;
+  }
+  
+  /* Resultados */
+  .game-result, .game-record {
+    order: 5;
+  }
+
+  /* Panel Ranking (AL FINAL) */
+  .side-panel.right-panel {
+    order: 6;
+    display: block !important;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* 5. AJUSTES VISUALES FINOS */
+  
+  /* Cards internas ocupan el 100% del contenedor padre (que ya tiene padding) */
+  .card {
+    width: 100%;
+    box-sizing: border-box; 
+  }
+
+  /* Botones más táctiles */
+  button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .game-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+}
+
+/* Ajuste extra para móviles muy pequeños (iPhone SE, etc) */
+@media (max-width: 480px) {
+  .welcome-section,
+  .game-section,
+  .retro-intro,
+  .main-header {
+    padding-left: 16px; /* Un poco menos de margen en pantallas muy chicas */
+    padding-right: 16px;
   }
 
   .game-console {
-    width: 100%;
-    height: 65vh;
-    max-width: none;
-    border-radius: 20px;
+    height: 45vh;
   }
-
-  button {
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 24px;
+  
+  .difficulty-controls button {
+    font-size: 13px;
+    padding: 10px 16px;
   }
-
-  .difficulty-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .game-time {
-    font-size: 14px;
-    bottom: 10px;
-    right: 14px;
-  }
-
-  .game-section {
-    padding: 20px 12px;
-  }
-}
-
-
-/* ===============================
-   BIENVENIDA
-================================ */
-.welcome-section {
-  max-width: 1200px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
-}
-
-.welcome-title {
-  text-align: center;
-  font-size: 1.4rem;
-  color: #ff6ec7;
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(255, 110, 199, 0.6);
-}
-
-.welcome-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 30px;
-}
-
-/* Cards base */
-.welcome-card {
-  background: linear-gradient(145deg, #1b1f3b, #0e1020);
-  border-radius: 16px;
-  padding: 20px;
-  border: 2px solid #ff6ec7;
-  box-shadow: 0 0 25px rgba(255, 110, 199, 0.25);
-}
-
-.welcome-card h3 {
-  margin-bottom: 16px;
-  color: #ffb3e6;
-}
-
-/* ===============================
-   LISTA DE JUEGOS
-================================ */
-.games-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.game-item {
-  padding: 12px 14px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: #15182f;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
-}
-
-.game-item:hover {
-  border-color: #ff6ec7;
-  box-shadow: 0 0 10px rgba(255, 110, 199, 0.4);
-}
-
-.game-item.active {
-  background: linear-gradient(135deg, #ff6ec7, #b14cff);
-  color: #fff;
-}
-
-.game-item.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* ===============================
-   DASHBOARD
-================================ */
-.dashboard {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.stat {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 14px;
-  background: #15182f;
-  border-radius: 10px;
-  font-size: 0.75rem;
-}
-
-.stat strong {
-  color: #ff6ec7;
 }
